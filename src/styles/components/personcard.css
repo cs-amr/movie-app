@@ -1,0 +1,39 @@
+.personCard {
+  min-width: 134px;
+  height: 176px;
+  background-image: url("/src/assets/as.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.personCard p {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  -webkit-backdrop-filter: blur(40px);
+          backdrop-filter: blur(40px);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  overflow-wrap: break-word;
+  margin-top: 110px;
+}
+
+@media screen and (max-width: 1020px) {
+  .moviePerson {
+    height: 144px;
+  }
+  .moviePerson p {
+    margin-top: 9px;
+    font-size: 0.95rem;
+  }
+}/*# sourceMappingURL=personcard.css.map */

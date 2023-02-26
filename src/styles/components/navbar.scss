@@ -1,0 +1,117 @@
+@import "../utilities/variables";
+header {
+  display: flex;
+  align-items: center;
+  padding-block: 24px;
+  width: 100%;
+  & > a {
+    color: white;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin-right: auto;
+  }
+  ul {
+    display: none;
+    display: flex;
+    gap: 2rem;
+  }
+  .search-bar {
+    height: 50px;
+    padding-left: 8px;
+    background-color: $dark-sec-bg;
+    .search,
+    button {
+      height: 100%;
+    }
+    button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      img {
+        width: 21px;
+      }
+    }
+    input {
+      background-color: transparent;
+      border: none;
+      height: 25px;
+      margin-block: 15px;
+      margin-inline: 1rem;
+      caret-color: white;
+      color: white;
+      &:focus {
+        outline: none;
+      }
+      &::placeholder {
+        color: $dark-p;
+        opacity: 1;
+      }
+
+      &:-ms-input-placeholder {
+        color: $dark-p;
+      }
+
+      &::-ms-input-placeholder {
+        color: $dark-p;
+      }
+    }
+  }
+  @media screen and (max-width: $large) {
+    .search-bar {
+      display: none;
+    }
+  }
+  .search-icon {
+    margin-left: 2rem;
+    cursor: pointer;
+    padding: 10px;
+    display: block;
+    background-color: gold;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background-color: #262626;
+    &:hover {
+      background-color: #262626ad;
+    }
+    img {
+      width: 21px;
+    }
+  }
+  @media screen and (min-width: $large) {
+    .search-icon {
+      display: none;
+    }
+  }
+  nav {
+    display: none;
+    a {
+      color: white;
+      font-size: 1.1rem;
+    }
+  }
+  @media screen and (min-width: $small) and (max-width: $large) {
+    nav {
+      display: block;
+    }
+  }
+  @media screen and (max-width: $small) {
+    nav {
+      display: none;
+    }
+  }
+}
+@media screen and (min-width: $medium) and (max-width: $large) {
+  header {
+    padding-inline: 30px;
+  }
+}
+@media screen and (max-width: $medium) {
+  header {
+    padding-inline: 24px;
+  }
+}

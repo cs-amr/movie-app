@@ -1,0 +1,18 @@
+@import "../utilities/variables";
+@import "../utilities/mixins";
+.movieCard {
+  background: url("/src/assets/movie\ demo.jpg");
+  @include card;
+  span {
+    @include rating;
+  }
+  p {
+    @include cardText;
+  }
+}
+@media screen and (max-width: 1020px) {
+  .movieCard {
+    width: 15.75rem;
+    height: 9rem;
+  }
+}

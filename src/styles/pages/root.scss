@@ -1,0 +1,55 @@
+@import "../utilities/variables";
+@import "../utilities/mixins";
+@import "../components/sidebar.scss";
+* {
+  box-sizing: border-box;
+}
+.root-layout {
+  display: flex;
+  & > div {
+    width: 100%;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+  }
+  * {
+    // outline: 1px solid brown;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .app-container {
+    width: calc(100vw - 120px);
+  }
+  aside.open + div .app-container {
+    width: calc(100vw - 300px);
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    margin-left: 290px;
+  }
+  aside.aside + div .app-container {
+    margin-left: 120px;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+  }
+}
+@media screen and (max-width: $medium) {
+  .app-container {
+  }
+}
+@media screen and (min-width: 620px) {
+  nav.mobilenav {
+    display: none;
+  }
+}
+.sliderContainer {
+  @include scroll;
+}

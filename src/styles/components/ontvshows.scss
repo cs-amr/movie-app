@@ -1,0 +1,12 @@
+@import "../utilities/mixins";
+.onTvshows {
+  h3 {
+    @include section-h;
+  }
+  .sliderContainer {
+    @include slider-container;
+    .slider {
+      @include slider;
+    }
+  }
+}

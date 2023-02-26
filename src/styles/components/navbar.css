@@ -1,0 +1,119 @@
+header {
+  display: flex;
+  align-items: center;
+  padding-block: 24px;
+  width: 100%;
+}
+header > a {
+  color: white;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-right: auto;
+}
+header ul {
+  display: none;
+  display: flex;
+  gap: 2rem;
+}
+header .search-bar {
+  height: 50px;
+  padding-left: 8px;
+  background-color: #262626;
+}
+header .search-bar .search,
+header .search-bar button {
+  height: 100%;
+}
+header .search-bar button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+header .search-bar button img {
+  width: 21px;
+}
+header .search-bar input {
+  background-color: transparent;
+  border: none;
+  height: 25px;
+  margin-block: 15px;
+  margin-inline: 1rem;
+  caret-color: white;
+  color: white;
+}
+header .search-bar input:focus {
+  outline: none;
+}
+header .search-bar input::-moz-placeholder {
+  color: #404040;
+  opacity: 1;
+}
+header .search-bar input::placeholder {
+  color: #404040;
+  opacity: 1;
+}
+header .search-bar input:-ms-input-placeholder {
+  color: #404040;
+}
+header .search-bar input::-ms-input-placeholder {
+  color: #404040;
+}
+@media screen and (max-width: 1280px) {
+  header .search-bar {
+    display: none;
+  }
+}
+header .search-icon {
+  margin-left: 2rem;
+  cursor: pointer;
+  padding: 10px;
+  display: block;
+  background-color: gold;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background-color: #262626;
+}
+header .search-icon:hover {
+  background-color: rgba(38, 38, 38, 0.6784313725);
+}
+header .search-icon img {
+  width: 21px;
+}
+@media screen and (min-width: 1280px) {
+  header .search-icon {
+    display: none;
+  }
+}
+header nav {
+  display: none;
+}
+header nav a {
+  color: white;
+  font-size: 1.1rem;
+}
+@media screen and (min-width: 640px) and (max-width: 1280px) {
+  header nav {
+    display: block;
+  }
+}
+@media screen and (max-width: 640px) {
+  header nav {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1280px) {
+  header {
+    padding-inline: 30px;
+  }
+}
+@media screen and (max-width: 767px) {
+  header {
+    padding-inline: 24px;
+  }
+}/*# sourceMappingURL=navbar.css.map */
