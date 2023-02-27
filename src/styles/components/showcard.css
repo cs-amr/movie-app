@@ -1,5 +1,4 @@
-.movieCard {
-  background: url("/src/assets/movie demo.jpg");
+.showCard {
   min-width: 18.75rem;
   height: 11rem;
   background-repeat: no-repeat;
@@ -13,7 +12,7 @@
   flex-direction: column;
   justify-content: space-between;
 }
-.movieCard span {
+.showCard span {
   display: block;
   font-size: 0.9rem;
   margin: 12px 12px 0px 12px;
@@ -32,11 +31,12 @@
   -ms-border-radius: 15px;
   -o-border-radius: 15px;
 }
-.movieCard p {
+.showCard p {
   color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
   text-align: left;
-  text-overflow: ellipsis;
-  margin-top: 6rem;
+  margin-top: 100%;
   -webkit-backdrop-filter: blur(40px);
           backdrop-filter: blur(40px);
   border-radius: 10px;
@@ -49,7 +49,7 @@
 }
 
 @media screen and (max-width: 1020px) {
-  .movieCard {
+  .showCard {
     width: 15.75rem;
     height: 9rem;
   }

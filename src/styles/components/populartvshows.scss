@@ -1,0 +1,12 @@
+@import "../utilities/mixins";
+.popularTvShows {
+  h3 {
+    @include section-h;
+  }
+  .sliderContainer {
+    @include slider-container;
+    .slider {
+      @include slider;
+    }
+  }
+}

@@ -1,14 +1,19 @@
 import React from "react";
 import { AiFillStar } from "react-icons/ai";
 import "../styles/components/moviecard.scss";
-export default function MovieCard() {
+export default function MovieCard({ movie }) {
   return (
-    <div className="movieCard">
+    <div
+      className="movieCard"
+      style={{
+        backgroundImage: `url("https://image.tmdb.org/t/p/w500${movie?.backdrop_path}")`,
+      }}
+    >
       <span>
         <AiFillStar color="#ffb43a" />
-        7.5
+        {movie?.vote_average}
       </span>
-      <p>the movie name </p>
+      <p>{movie?.original_title}</p>
     </div>
   );
 }

@@ -1,7 +1,6 @@
 @import "../utilities/variables";
 @import "../utilities/mixins";
 .movieCard {
-  background: url("/src/assets/movie\ demo.jpg");
   @include card;
   span {
     @include rating;

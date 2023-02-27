@@ -32,13 +32,3 @@ nav.morenav {
     display: none;
   }
 }
-@media screen and (min-width: $medium) and (max-width: $large) {
-  .morenav ul {
-    padding-inline: 30px;
-  }
-}
-@media screen and (max-width: $medium) {
-  .morenav ul {
-    padding-inline: 24px;
-  }
-}

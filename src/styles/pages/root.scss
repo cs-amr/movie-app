@@ -41,6 +41,11 @@
     -o-transition: 0.5s;
   }
 }
+@media screen and (max-width: $large) {
+  .app-container section {
+    padding-left: 10px;
+  }
+}
 @media screen and (max-width: $medium) {
   .app-container {
   }

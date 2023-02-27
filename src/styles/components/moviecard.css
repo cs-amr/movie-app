@@ -1,5 +1,4 @@
 .movieCard {
-  background: url("/src/assets/movie demo.jpg");
   min-width: 18.75rem;
   height: 11rem;
   background-repeat: no-repeat;
@@ -34,8 +33,9 @@
 }
 .movieCard p {
   color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
   text-align: left;
-  text-overflow: ellipsis;
   margin-top: 100%;
   -webkit-backdrop-filter: blur(40px);
           backdrop-filter: blur(40px);

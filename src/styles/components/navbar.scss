@@ -21,6 +21,9 @@ header {
     height: 50px;
     padding-left: 8px;
     background-color: $dark-sec-bg;
+    .search {
+      width: 400px;
+    }
     .search,
     button {
       height: 100%;
