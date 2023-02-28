@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useQuery } from "react-query";
-import "../styles/components/populartvShows.scss";
 import ShowCard from "./ShowCard";
 export default function PopularTvShows() {
   const {

@@ -8,7 +8,7 @@ export default function UpComingMovies() {
     data: data1,
     isError,
   } = useQuery({
-    queryKey: ["movies", "upComing", 1],
+    queryKey: ["moviesupComing1"],
     queryFn: fetchPage1,
   });
   const {
@@ -16,14 +16,14 @@ export default function UpComingMovies() {
     data: data2,
     isError: isError2,
   } = useQuery({
-    queryKey: ["movies", "upComing", 2],
+    queryKey: ["moviesupComing2"],
     queryFn: fetchPage2,
   });
   async function fetchPage1() {
     const response = await axios.get(
       `https://api.themoviedb.org/3/movie/upcoming?api_key=${
         import.meta.env.VITE_API_KEY
-      }&language=en-US&page=1`
+      }&language=en-US&page=3`
     );
     const data = await response.data;
     return data;
@@ -32,7 +32,7 @@ export default function UpComingMovies() {
     const response = await axios.get(
       `https://api.themoviedb.org/3/movie/upcoming?api_key=${
         import.meta.env.VITE_API_KEY
-      }&language=en-US&page=2`
+      }&language=en-US&page=4`
     );
     const data = await response.data;
     return data;
