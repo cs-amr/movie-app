@@ -18,7 +18,9 @@
     // outline: 1px solid brown;
   }
 }
-
+.home section .sliderContainer:nth-child(3) {
+  display: none;
+}
 @media screen and (min-width: 1280px) {
   .app-container {
     width: calc(100vw - 120px);

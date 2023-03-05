@@ -5,11 +5,13 @@ import NowPlaying from "../components/NowPlaying";
 import OnTvShows from "../components/OnTvShows";
 import PopularMovies from "../components/PopularMovies";
 import PopularTvShows from "../components/PopularTvShows";
+import HeroShow from "../components/HeroShow";
 
 export default function Home() {
   return (
-    <section>
+    <section className="home">
       <MoreNav />
+      <HeroShow />
       <PopularPeople />
       <NowPlaying />
       <OnTvShows />

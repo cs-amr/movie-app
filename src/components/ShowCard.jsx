@@ -6,7 +6,8 @@ export default function ShowCard({ show }) {
     <div
       className="showCard"
       style={{
-        backgroundImage: `url("https://image.tmdb.org/t/p/w500${show?.backdrop_path}")`,
+        backgroundImage: `
+          url(https://image.tmdb.org/t/p/w500${show?.backdrop_path}  `,
       }}
     >
       <span>

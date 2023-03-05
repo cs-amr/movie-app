@@ -118,3 +118,8 @@ header {
     padding-inline: 24px;
   }
 }
+@media screen and (max-width: $large) {
+  header {
+    padding-right: 30px;
+  }
+}

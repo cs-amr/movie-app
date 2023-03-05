@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import "../styles/components/navbar.css";
+import "../styles/components/navbar.scss";
 export default function Navbar() {
   return (
     <header>
@@ -18,12 +18,12 @@ export default function Navbar() {
         </ul>
       </nav>
       <div className="search-icon">
-        <img src="/src/assets/icons8-search.svg" alt="" />
+        <img src="/public/assets/icons8-search.svg" alt="" />
       </div>
       <div className="search-bar">
         <div className="search">
           <button>
-            <img src="/src/assets/icons8-search.svg" alt="" />
+            <img src="/public/assets/icons8-search.svg" alt="" />
           </button>
           <input type="text" placeholder="search for movies and tvshows" />
         </div>

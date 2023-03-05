@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useQuery } from "react-query";
+import { useFetch } from "../hooks/useFetch";
 import MovieCard from "./MovieCard";
 
 export default function RatedMovies() {
@@ -7,36 +8,23 @@ export default function RatedMovies() {
     isLoading: isLoading1,
     data: data1,
     isError,
-  } = useQuery({
-    queryKey: ["movies", "toprated", 1],
-    queryFn: fetchPage1,
-  });
+  } = useFetch(
+    ["movies", "toprated", 1],
+    `https://api.themoviedb.org/3/movie/top_rated?api_key=${
+      import.meta.env.VITE_API_KEY
+    }&language=en-US&page=1`
+  );
   const {
     isLoading: isLoading2,
     data: data2,
     isError: isError2,
-  } = useQuery({
-    queryKey: ["movies", "toprated", 2],
-    queryFn: fetchPage2,
-  });
-  async function fetchPage1() {
-    const response = await axios.get(
-      `https://api.themoviedb.org/3/movie/top_rated?api_key=${
-        import.meta.env.VITE_API_KEY
-      }&language=en-US&page=1`
-    );
-    const data = await response.data;
-    return data;
-  }
-  async function fetchPage2() {
-    const response = await axios.get(
-      `https://api.themoviedb.org/3/movie/top_rated?api_key=${
-        import.meta.env.VITE_API_KEY
-      }&language=en-US&page=2`
-    );
-    const data = await response.data;
-    return data;
-  }
+  } = useFetch(
+    ["movies", "toprated", 2],
+    `https://api.themoviedb.org/3/movie/top_rated?api_key=${
+      import.meta.env.VITE_API_KEY
+    }&language=en-US&page=2`
+  );
+
   if (isLoading1) return <h1>...</h1>;
   if (isLoading2) return <h1>...</h1>;
 

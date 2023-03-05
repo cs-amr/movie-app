@@ -1,42 +1,28 @@
 import "../styles/components/upcomingmovies.scss";
-import { useQuery } from "react-query";
-import axios from "axios";
 import MovieCard from "./MovieCard";
+import { useFetch } from "../hooks/useFetch";
 export default function UpComingMovies() {
   const {
     isLoading: isLoading1,
     data: data1,
     isError,
-  } = useQuery({
-    queryKey: ["moviesupComing1"],
-    queryFn: fetchPage1,
-  });
+  } = useFetch(
+    ["moviesupComing1"],
+    `https://api.themoviedb.org/3/movie/upcoming?api_key=${
+      import.meta.env.VITE_API_KEY
+    }&language=en-US&page=3`
+  );
   const {
     isLoading: isLoading2,
     data: data2,
     isError: isError2,
-  } = useQuery({
-    queryKey: ["moviesupComing2"],
-    queryFn: fetchPage2,
-  });
-  async function fetchPage1() {
-    const response = await axios.get(
-      `https://api.themoviedb.org/3/movie/upcoming?api_key=${
-        import.meta.env.VITE_API_KEY
-      }&language=en-US&page=3`
-    );
-    const data = await response.data;
-    return data;
-  }
-  async function fetchPage2() {
-    const response = await axios.get(
-      `https://api.themoviedb.org/3/movie/upcoming?api_key=${
-        import.meta.env.VITE_API_KEY
-      }&language=en-US&page=4`
-    );
-    const data = await response.data;
-    return data;
-  }
+  } = useFetch(
+    ["moviesupComing2"],
+    `https://api.themoviedb.org/3/movie/upcoming?api_key=${
+      import.meta.env.VITE_API_KEY
+    }&language=en-US&page=4`
+  );
+
   if (isLoading1) return <h1>...</h1>;
   if (isLoading2) return <h1>...</h1>;
 

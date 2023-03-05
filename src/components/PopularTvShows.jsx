@@ -1,42 +1,32 @@
 import axios from "axios";
 import { useQuery } from "react-query";
+import { useFetch } from "../hooks/useFetch";
 import ShowCard from "./ShowCard";
 export default function PopularTvShows() {
   const {
     isLoading,
     data: data1,
     isError,
-  } = useQuery({
-    queryKey: ["shows", "popular", 1],
-    queryFn: fetchPageOne,
-  });
-  async function fetchPageOne() {
-    const response = await axios.get(
-      ` https://api.themoviedb.org/3/tv/popular?api_key=${
-        import.meta.env.VITE_API_KEY
-      }&language=en-US&page=1`
-    );
-    const data = await response.data;
-    return data;
-  }
+  } = useFetch(
+    ["shows", "popular", 1],
+    ` https://api.themoviedb.org/3/tv/popular?api_key=${
+      import.meta.env.VITE_API_KEY
+    }&language=en-US&page=4`
+  );
+
   const {
     isLoading: isLoading2,
     data: data2,
     isError: isError2,
-  } = useQuery({
-    queryKey: ["shows", "popular", 2],
-    queryFn: fetchPageTwo,
-  });
-  async function fetchPageTwo() {
-    const response = await axios.get(
-      ` https://api.themoviedb.org/3/tv/popular?api_key=${
-        import.meta.env.VITE_API_KEY
-      }&language=en-US&page=2`
-    );
-    const data = await response.data;
-    return data;
-  }
+  } = useFetch(
+    ["shows", "popular", 2],
+    ` https://api.themoviedb.org/3/tv/popular?api_key=${
+      import.meta.env.VITE_API_KEY
+    }&language=en-US&page=3`
+  );
+
   if (isLoading) return <h1>...</h1>;
+  if (isLoading2) return <h1>...</h1>;
 
   return (
     <section className="popularTvShows">
