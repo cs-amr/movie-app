@@ -1,34 +1,33 @@
-import React from "react";
 import { AiFillStar } from "react-icons/ai";
 import { useParams } from "react-router-dom";
-import MovieCard from "../components/MovieCard";
 import PersonCard from "../components/PersonCard";
+import ShowCard from "../components/ShowCard";
 import { useFetch } from "../hooks/useFetch";
-
-export default function Movie() {
-  const { movieId } = useParams();
+import "../styles/pages/movie.scss";
+export default function Show() {
+  const { showId } = useParams();
   const { data, isLoading } = useFetch(
-    ["movie", movieId],
-    `https://api.themoviedb.org/3/movie/${movieId}?api_key=${
+    ["show", showId],
+    `https://api.themoviedb.org/3/tv/${showId}?api_key=${
       import.meta.env.VITE_API_KEY
     }&language=en-US`
   );
   const { data: data2, isLoading: isLoading2 } = useFetch(
-    ["credit", movieId],
-    `https://api.themoviedb.org/3/movie/${movieId}/credits?language=en-US&api_key=${
+    ["credit", showId],
+    `https://api.themoviedb.org/3/tv/${showId}/credits?language=en-US&api_key=${
       import.meta.env.VITE_API_KEY
     }`
   );
   const { data: reviews, isLoading: isLoading3 } = useFetch(
     ["reviews"],
-    `https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=${
+    `https://api.themoviedb.org/3/tv/${showId}/reviews?api_key=${
       import.meta.env.VITE_API_KEY
     }&language=en-US&page=1`
   );
 
   const { data: recommendations, isLoading: isLoading4 } = useFetch(
     ["recommendations"],
-    `https://api.themoviedb.org/3/movie/${movieId}/recommendations?api_key=${
+    `https://api.themoviedb.org/3/tv/${showId}/recommendations?api_key=${
       import.meta.env.VITE_API_KEY
     }&language=en-US&page=1`
   );
@@ -36,6 +35,7 @@ export default function Movie() {
   https: if (isLoading2) <h1>...</h1>;
   https: if (isLoading3) <h1>...</h1>;
   https: if (isLoading4) <h1>...</h1>;
+
   return (
     <section className="detailsContainer">
       <section className="details">
@@ -45,7 +45,7 @@ export default function Movie() {
             alt=""
           />
           <div>
-            <h4>{data?.original_title}</h4>
+            <h4>{data?.name}</h4>
             <p>{data?.tagline}</p>
             <div className="detailsRating">
               <AiFillStar color="#ffb43a" />
@@ -58,7 +58,7 @@ export default function Movie() {
             </p>
             <p>
               <span>Release Date:</span>
-              {data?.release_date}
+              {data?.first_air_date}
             </p>
             <ul className="detailsGenres">
               {data?.genres.map((genre, index) => {
@@ -117,8 +117,8 @@ export default function Movie() {
               <h5>Recommended</h5>
               <div className="sliderContainer">
                 <div className="slider">
-                  {recommendations?.results.map((movie, index) => {
-                    return <MovieCard movie={movie} key={index} />;
+                  {recommendations?.results.map((show, index) => {
+                    return <ShowCard show={show} key={index} />;
                   })}
                 </div>
               </div>

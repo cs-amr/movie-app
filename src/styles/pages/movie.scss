@@ -1,0 +1,129 @@
+@import "../utilities/variables";
+.detailsContainer {
+  margin-inline: auto;
+  width: 100%;
+  padding-right: 30px;
+  color: white;
+  span {
+    color: white;
+    font-weight: 900;
+    font-size: 1rem;
+  }
+  h4 {
+    font-size: 1.8rem;
+    margin-bottom: 0.75rem;
+  }
+  h5 {
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    margin-top: 1.25rem;
+  }
+
+  .details {
+    .detailsImg {
+      display: flex;
+      @media (max-width: $small) {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      gap: 2rem;
+      p {
+        margin-block: 0.75rem;
+      }
+      .detailsGenres {
+        display: flex;
+        gap: 0.3rem;
+        li {
+          max-height: 28px;
+          overflow: hidden;
+          background-color: $dark-sec-bg;
+          padding: 5px 10px;
+          border-radius: 50px;
+          -webkit-border-radius: 50px;
+          -moz-border-radius: 50px;
+          -ms-border-radius: 50px;
+          -o-border-radius: 50px;
+        }
+      }
+      span {
+        margin-right: 0.5rem;
+      }
+    }
+    img {
+      width: 200px;
+      height: 300px;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+    }
+    .detailsRating {
+      margin-block: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+  }
+  .detailsBody {
+    margin-top: 2rem;
+    display: flex;
+    gap: 3rem;
+    @media (max-width: 1280px) {
+      flex-direction: column;
+    }
+    .detailsLeft {
+      @media (max-width: 1280px) {
+        width: 100%;
+      }
+      width: 60vw;
+      .synopsis {
+        p {
+          max-width: 60%;
+          color: white;
+        }
+      }
+      .cast {
+        .sliderContainer {
+          height: 190px;
+          max-width: 1140px;
+        }
+      }
+      .crew {
+        .sliderContainer {
+          height: 190px;
+          max-width: 1140px;
+        }
+      }
+    }
+    .detailsRight {
+      overflow: hidden;
+      .review {
+        min-width: 320px;
+        height: 160px;
+        padding: 16px;
+        background-color: $dark-sec-bg;
+
+        border-radius: 12px;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        -ms-border-radius: 12px;
+        -o-border-radius: 12px;
+        p {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          height: calc(100% - 1.1rem);
+        }
+        span {
+          color: gray;
+        }
+      }
+      .videos {
+        width: 15.75rem;
+        height: 9rem;
+      }
+    }
+  }
+}

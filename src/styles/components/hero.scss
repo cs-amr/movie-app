@@ -1,15 +1,16 @@
 @import "../utilities/variables";
-// font-weight: 700;
-// }
-// .text-3xl {
-//   font-size: 1.875rem;
-//   line-height: 2.25rem;
 .hero {
+  overflow: scroll;
+  margin-right: 30px;
+
   background-color: $dark-sec-bg;
   max-height: 26.25rem;
   height: 26.25rem;
   display: flex;
   gap: 3rem;
+  @media screen and (max-width: 640px) {
+    display: none;
+  }
   .heroName {
     font-size: 1.8rem;
     font-weight: 700;

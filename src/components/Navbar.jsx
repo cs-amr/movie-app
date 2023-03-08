@@ -3,7 +3,13 @@ import "../styles/components/navbar.scss";
 export default function Navbar() {
   return (
     <header>
-      <Link to="/">Movies</Link>
+      <Link
+        to="/"
+        className="
+      roo"
+      >
+        Movies
+      </Link>
       <nav>
         <ul>
           <li>

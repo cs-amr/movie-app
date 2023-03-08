@@ -9,7 +9,7 @@ export default function Hero() {
     ["people"],
     ` https://api.themoviedb.org/3/person/popular?api_key=${
       import.meta.env.VITE_API_KEY
-    }&language=en-US&page=1`
+    }&language=en-US&page=2`
   );
   useEffect(() => {
     const interval = setInterval(() => {
@@ -40,8 +40,8 @@ export default function Hero() {
           <p>Some Work</p>
           <div>
             {currentPerson.known_for &&
-              currentPerson.known_for.map((movie) => (
-                <MovieCard movie={movie} />
+              currentPerson.known_for.map((movie, index) => (
+                <MovieCard movie={movie} key={index} />
               ))}
           </div>
         </div>

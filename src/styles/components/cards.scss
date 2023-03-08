@@ -1,0 +1,65 @@
+.cards {
+  height: 500px;
+  width: 97vw;
+
+  @media screen and (min-width: 640px) {
+    display: none;
+  }
+  .cardsWrapper {
+    margin-top: 3rem;
+    display: flex;
+    gap: 18%;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    justify-content: center;
+    align-items: center;
+    .prevCard {
+      transform: rotate(-10deg);
+      -webkit-transform: rotate(-10deg);
+      -moz-transform: rotate(-10deg);
+      -ms-transform: rotate(-10deg);
+      -o-transform: rotate(-10deg);
+    }
+    .nextCard {
+      transform: rotate(10deg);
+      -webkit-transform: rotate(10deg);
+      -moz-transform: rotate(10deg);
+      -ms-transform: rotate(10deg);
+      -o-transform: rotate(10deg);
+    }
+    .nextCard,
+    .prevCard {
+      opacity: 0.7;
+    }
+    .currentCard {
+      margin-top: -8rem;
+
+      p {
+        color: white;
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-top: 1.5rem;
+      }
+    }
+    .nextCard,
+    .currentCard,
+    .prevCard {
+      text-align: center;
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        -ms-border-radius: 15px;
+        -o-border-radius: 15px;
+      }
+      .cardsPoster {
+        width: 220px;
+        height: 320px;
+        border-radius: 15px;
+      }
+    }
+  }
+}

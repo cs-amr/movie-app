@@ -60,3 +60,6 @@
 .sliderContainer {
   @include scroll;
 }
+aside.open header {
+  background-color: white;
+}

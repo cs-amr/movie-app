@@ -18,7 +18,7 @@ export default function PopularPeople() {
     ["people", 2],
     ` https://api.themoviedb.org/3/person/popular?api_key=${
       import.meta.env.VITE_API_KEY
-    }&language=en-US&page=2`
+    }&language=en-US&page=3`
   );
   if (isLoading) return <h1>...</h1>;
   if (isLoading2) return <h1>...</h1>;

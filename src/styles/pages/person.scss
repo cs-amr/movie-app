@@ -1,0 +1,109 @@
+@import "../utilities/variables";
+.detailsContainer {
+  margin-inline: auto;
+  width: 100%;
+  padding-right: 30px;
+  color: white;
+  span {
+    color: white;
+    font-weight: 900;
+    font-size: 1rem;
+    margin-right: 0.5rem;
+  }
+  h4 {
+    font-size: 1.8rem;
+    margin-bottom: 0.75rem;
+  }
+  h5 {
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    margin-top: 1.25rem;
+  }
+
+  .details {
+    .detailsImg {
+      display: flex;
+      @media (max-width: $small) {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      gap: 2rem;
+      p {
+        margin-block: 0.75rem;
+      }
+      .detailsGenres {
+        display: flex;
+        gap: 0.3rem;
+        li {
+          max-height: 28px;
+          overflow: hidden;
+          background-color: $dark-sec-bg;
+          padding: 5px 10px;
+          border-radius: 50px;
+          -webkit-border-radius: 50px;
+          -moz-border-radius: 50px;
+          -ms-border-radius: 50px;
+          -o-border-radius: 50px;
+        }
+      }
+      span {
+        margin-right: 0.5rem;
+      }
+    }
+    img {
+      width: 200px;
+      height: 300px;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+    }
+    .detailsRating {
+      margin-block: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+  }
+  .detailsBody {
+    margin-top: 2rem;
+    display: flex;
+    gap: 3rem;
+    @media (max-width: 1280px) {
+      flex-direction: column;
+    }
+    .detailsLeft {
+      @media (max-width: 1280px) {
+        width: 100%;
+      }
+      width: 60vw;
+      .biography {
+        p {
+          color: gray;
+        }
+      }
+      .slider {
+        display: flex;
+      }
+      .images {
+        .img {
+          min-width: 140px;
+          min-height: 210px;
+          background-color: burlywood;
+          background-size: contain;
+          border-radius: 5px;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          -ms-border-radius: 5px;
+          -o-border-radius: 5px;
+        }
+      }
+    }
+    .detailsRight {
+      overflow: hidden;
+    }
+  }
+}

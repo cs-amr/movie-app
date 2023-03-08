@@ -2,7 +2,7 @@ import { createContext, useContext, useState } from "react";
 
 const AppContext = createContext();
 function AppProvider({ children }) {
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   return (
     <AppContext.Provider value={{ sidebarOpen, setSidebarOpen }}>
       {children}
