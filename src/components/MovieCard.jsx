@@ -13,7 +13,7 @@ export default function MovieCard({ movie }) {
     >
       <span>
         <AiFillStar color="#ffb43a" />
-        {movie?.vote_average}
+        {(movie?.vote_average).toFixed(1)}
       </span>
       <p>{movie?.original_title || movie?.title}</p>
     </Link>

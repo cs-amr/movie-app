@@ -3,7 +3,5 @@
 @import "./styles/base/typography";
 body {
   background-color: $dark-bg;
-  * {
-    // outline: 2px solid white;
-  }
+  overflow-x: hidden;
 }

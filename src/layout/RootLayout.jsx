@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import MobileNav from "../components/MobileNav";
 import Navbar from "../components/Navbar";
 import ScrollToTop from "../components/ScrollToTop";
+import Search from "../components/Search";
 import Sidebar from "../components/Sidebar";
 import "../styles/pages/root.scss";
 export default function RootLayout() {
@@ -16,6 +17,7 @@ export default function RootLayout() {
         </section>
         <MobileNav />
       </div>
+      <Search />
     </main>
   );
 }

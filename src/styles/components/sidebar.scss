@@ -50,16 +50,16 @@ aside {
   .aside-links {
     margin-top: 3rem;
     ul {
-      margin-inline: 5px;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
       li {
-        &:has(.link.active) {
-          background: $dark-sec-bg;
-          padding: 0.5rem;
-          width: 190px;
+        padding-right: 15px;
+        margin-left: -5px;
+        a {
+          padding: 5px;
           border-radius: 10px;
+          padding-block: 8px;
+          padding-left: 11px;
           -webkit-border-radius: 10px;
           -moz-border-radius: 10px;
           -ms-border-radius: 10px;
@@ -74,10 +74,18 @@ aside {
       display: block;
     }
     ul {
-      margin-inline: 5px;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      li {
+        padding-right: 20px;
+        margin-left: -5px;
+        a {
+          padding: 5px;
+          border-radius: 5px;
+          padding-block: 8px;
+          padding-left: 11px;
+        }
+      }
     }
   }
   .link {
@@ -110,6 +118,6 @@ aside {
   }
 }
 
-.aside a.active {
-  background: none;
+aside.open li > a.active {
+  background: $dark-sec-bg;
 }

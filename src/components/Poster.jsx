@@ -1,9 +1,11 @@
 import React from "react";
 import { AiFillStar } from "react-icons/ai";
+import { Link } from "react-router-dom";
 import "../styles/components/poster.scss";
 export default function Poster({ poster }) {
   return (
-    <div
+    <Link
+      to={`../movies/${poster.id}`}
       className="poster"
       style={{
         backgroundImage: `url("https://image.tmdb.org/t/p/w500${poster?.poster_path}")`,
@@ -16,6 +18,6 @@ export default function Poster({ poster }) {
       <p>
         {poster.original_title ? poster.original_title : poster.original_name}
       </p>
-    </div>
+    </Link>
   );
 }

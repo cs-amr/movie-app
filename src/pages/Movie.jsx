@@ -20,14 +20,14 @@ export default function Movie() {
     }`
   );
   const { data: reviews, isLoading: isLoading3 } = useFetch(
-    ["reviews"],
+    ["reviews", movieId],
     `https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=${
       import.meta.env.VITE_API_KEY
     }&language=en-US&page=1`
   );
 
   const { data: recommendations, isLoading: isLoading4 } = useFetch(
-    ["recommendations"],
+    ["recommendations", movieId],
     `https://api.themoviedb.org/3/movie/${movieId}/recommendations?api_key=${
       import.meta.env.VITE_API_KEY
     }&language=en-US&page=1`

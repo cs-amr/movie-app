@@ -35,7 +35,6 @@ export default function Person() {
   if (isLoadingImgs) <h1>...</h1>;
   if (isLoading3) <h1>...</h1>;
   if (isLoading4) <h1>...</h1>;
-  console.log(showCredit);
   return (
     <section className="detailsContainer">
       <section className="details">

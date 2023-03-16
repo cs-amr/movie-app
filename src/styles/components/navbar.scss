@@ -22,11 +22,12 @@ header {
   }
   .search-bar {
     height: 50px;
-    padding-left: 8px;
     background-color: $dark-sec-bg;
     margin-right: 30px;
     .search {
       width: 400px;
+      display: flex;
+      align-items: center;
     }
     .search,
     button {
@@ -36,8 +37,12 @@ header {
       background-color: transparent;
       border: none;
       cursor: pointer;
+      padding: 14px;
+      &:hover {
+        background-color: #45454531;
+      }
       img {
-        width: 21px;
+        width: 22px;
       }
     }
     input {

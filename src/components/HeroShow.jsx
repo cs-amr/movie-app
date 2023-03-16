@@ -40,7 +40,7 @@ export default function HeroShow() {
 
           {currentMovie?.vote_average}
         </p>
-        <Link to={`movies/${currentMovie?.id}`}>More</Link>
+        <Link to={`../movies/${currentMovie?.id}`}>More</Link>
       </div>
       <div className="heroCards">
         <div

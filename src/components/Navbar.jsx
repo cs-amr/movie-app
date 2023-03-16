@@ -1,6 +1,11 @@
+import { useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { useGlobalContext } from "../context/SearchContext";
 import "../styles/components/navbar.scss";
 export default function Navbar() {
+  const { searchIsOpen, setSearchIsOpen, keyword, setKeyword } =
+    useGlobalContext();
+  const refInput = useRef(null);
   return (
     <header>
       <Link
@@ -23,15 +28,31 @@ export default function Navbar() {
           </li>
         </ul>
       </nav>
-      <div className="search-icon">
+      <div
+        className="search-icon"
+        onClick={() => {
+          setSearchIsOpen(true);
+        }}
+      >
         <img src="/public/assets/icons8-search.svg" alt="" />
       </div>
       <div className="search-bar">
         <div className="search">
-          <button>
+          <button
+            onClick={() => {
+              if (refInput.current.value) {
+                setKeyword(refInput.current.value);
+                setSearchIsOpen(true);
+              }
+            }}
+          >
             <img src="/public/assets/icons8-search.svg" alt="" />
           </button>
-          <input type="text" placeholder="search for movies and tvshows" />
+          <input
+            type="text"
+            placeholder="search for movies and tvshows"
+            ref={refInput}
+          />
         </div>
       </div>
     </header>

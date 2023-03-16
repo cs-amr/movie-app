@@ -8,10 +8,9 @@ import { BsFillPeopleFill } from "react-icons/bs";
 import { CgMore } from "react-icons/cg";
 import { AiTwotoneStar } from "react-icons/ai";
 import { FaCalendar } from "react-icons/fa";
-import { useGlobalContext } from "../context/AppContext";
 import "../styles/components/sidebar.scss";
 export default function Sidebar() {
-  const { sidebarOpen, setSidebarOpen } = useGlobalContext();
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
     <aside className={sidebarOpen ? "open" : "aside"}>
