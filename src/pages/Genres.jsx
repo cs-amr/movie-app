@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { useInfiniteQuery } from "react-query";
 import MoreNav from "../components/MoreNav";
 import Poster from "../components/Poster";
@@ -118,7 +118,10 @@ export default function Genres() {
         )}
       </div>
 
-      <button onClick={fetchNextPage} className="showmore">
+      <button
+        onClick={fetchNextPage}
+        className={data5 ? "showmore show" : "showmore"}
+      >
         Show More
       </button>
     </section>
