@@ -1,16 +1,18 @@
 import axios from "axios";
-import { useInfiniteQuery, useQuery } from "react-query";
+import { useRef, useState } from "react";
+import { useInfiniteQuery } from "react-query";
 import MoreNav from "../components/MoreNav";
 import Poster from "../components/Poster";
 import { useFetch } from "../hooks/useFetch";
 import "../styles/pages/genres.scss";
 export default function Genres() {
+  const [genre, setGenre] = useState();
   const {
     isLoading: isLoading1,
     data: moviesGenres,
     isError,
   } = useFetch(
-    ["fetchMoviesGenres"],
+    ["MoviesGenres"],
     `https://api.themoviedb.org/3/genre/movie/list?api_key=${
       import.meta.env.VITE_API_KEY
     }&language=en-US&page=1`
@@ -20,42 +22,58 @@ export default function Genres() {
     data: showsGenres,
     isError: isError2,
   } = useFetch(
-    ["fetchShowsGenres"],
+    ["ShowsGenres"],
     `https://api.themoviedb.org/3/genre/tv/list?api_key=${
       import.meta.env.VITE_API_KEY
     }&language=en-US&page=2`
   );
-
-  const posterQuery = useInfiniteQuery(["posters"], fetchPosters, {
+  const {
+    refetch,
+    status,
+    data: data5,
+    error,
+    isFetching,
+    isLoading: isLoading3,
+    isFetchingNextPage,
+    fetchNextPage,
+    hasNextPage,
+  } = useInfiniteQuery(["posters"], fetchPosters, {
     enabled: false,
+    getNextPageParam: (lastPage, pages) => {
+      if (pages.length < 20) {
+        return pages.length + 1;
+      } else {
+        return undefined;
+      }
+    },
   });
 
+  async function fetchPosters({ pageParam = 1 }) {
+    const response = await axios.get(
+      `https://api.themoviedb.org/3/discover/${genre[0]}?api_key=58a2317a4052099aa1668e2379940ca3&with_genres=${genre[1]}&page=${pageParam}`
+    );
+    return response.data;
+  }
+
   function handelClick(e) {
-    const btn = document.querySelector(".active");
+    const btn = document.querySelector("button.active");
     if (btn) {
       btn.classList.remove("active");
     }
     e.target.classList.add("active");
-  }
-
-  async function fetchPosters({ page = 1 }) {
-    const fetchGenre = document.querySelector("button.active");
-    const response = await axios.get(
-      `https://api.themoviedb.org/3/discover/${fetchGenre.getAttribute(
-        "data-type"
-      )}?api_key=${import.meta.env.VITE_API_KEY}&with_genres=${
-        fetchGenre.id
-      }&page=${page}`
-    );
-    const data = await response.data;
-    return data;
+    setGenre([e.target.getAttribute("data-type"), e.target.id]);
+    refetch();
   }
 
   if (isLoading1) return <h1>...</h1>;
   if (isLoading2) return <h1>...</h1>;
+  if (isLoading3) {
+    return <h1>loading</h1>;
+  }
   return (
     <section>
       <MoreNav />
+
       <div className="moviesGenres">
         <h4>Movies Genres</h4>
         <div className="genresBtns">
@@ -93,10 +111,16 @@ export default function Genres() {
         </div>
       </div>
       <div className="postersGrid">
-        {posterQuery.data?.results.map((poster, index) => {
-          return <Poster key={index} poster={poster} />;
-        })}
+        {data5?.pages.map((page) =>
+          page.results.map((poster, index) => (
+            <Poster key={index} poster={poster} type={genre[0]} />
+          ))
+        )}
       </div>
+
+      <button onClick={fetchNextPage} className="showmore">
+        Show More
+      </button>
     </section>
   );
 }

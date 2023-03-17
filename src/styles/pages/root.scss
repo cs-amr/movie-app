@@ -14,9 +14,6 @@
     -ms-transition: 0.5s;
     -o-transition: 0.5s;
   }
-  * {
-    // outline: 1px solid brown;
-  }
 }
 .home section .sliderContainer:nth-child(3) {
   display: none;
@@ -48,10 +45,7 @@
     padding-left: 10px;
   }
 }
-@media screen and (max-width: $medium) {
-  .app-container {
-  }
-}
+
 @media screen and (min-width: 620px) {
   nav.mobilenav {
     display: none;
@@ -60,6 +54,12 @@
 .sliderContainer {
   @include scroll;
 }
-aside.open header {
-  background-color: white;
+@media (min-width: 1300px) {
+  aside.open + div header .roo {
+    visibility: hidden;
+  }
+}
+
+.seach-overlay {
+  display: none;
 }

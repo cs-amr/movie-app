@@ -46,7 +46,7 @@ export default function Search() {
   if (isLoading3) <h1>....</h1>;
   return (
     <div
-      className={searchIsOpen ? "search-overlay open" : "seach-overlay close"}
+      className={searchIsOpen ? "search-overlay open" : "seach-overlay "}
       onClick={() => {
         setSearchIsOpen(false);
       }}
@@ -64,12 +64,12 @@ export default function Search() {
               setKeyword(inputRef.current.value);
             }}
           >
-            <img src="/public/assets/icons8-search.svg" alt="" />
+            <img src="/assets/icons8-search.svg" alt="" />
           </button>
           <input
             type="text"
             placeholder="search for movies and tvshows"
-            Value={keyword}
+            defaultValue={keyword}
             ref={inputRef}
           />
         </div>
@@ -83,8 +83,8 @@ export default function Search() {
                   setSearchIsOpen(false);
                 }}
               >
-                {movies?.results.map((movie) => {
-                  return <MovieCard movie={movie} />;
+                {movies?.results.map((movie, index) => {
+                  return <MovieCard movie={movie} key={index} />;
                 })}
               </div>
             </div>
@@ -98,8 +98,8 @@ export default function Search() {
                   setSearchIsOpen(false);
                 }}
               >
-                {shows?.results.map((show) => {
-                  return <ShowCard show={show} />;
+                {shows?.results.map((show, index) => {
+                  return <ShowCard show={show} key={index} />;
                 })}
               </div>
             </div>
@@ -108,8 +108,8 @@ export default function Search() {
             <h4>People</h4>
             <div className="sliderContainer">
               <div className="slider" onClick={() => setSearchIsOpen(false)}>
-                {people?.results.map((person) => {
-                  return <PersonCard person={person} />;
+                {people?.results.map((person, index) => {
+                  return <PersonCard person={person} key={index} />;
                 })}
               </div>
             </div>

@@ -101,9 +101,9 @@ export default function Movie() {
               <h5>Reviews</h5>
               <div className="sliderContainer">
                 <div className="slider">
-                  {reviews?.results.map((review) => {
+                  {reviews?.results.map((review, index) => {
                     return (
-                      <div className="review">
+                      <div className="review" key={index}>
                         <p>{review.content}</p>
                         <span>by {review.author}</span>
                       </div>

@@ -34,7 +34,7 @@ export default function Navbar() {
           setSearchIsOpen(true);
         }}
       >
-        <img src="/public/assets/icons8-search.svg" alt="" />
+        <img src="/assets/icons8-search.svg" alt="" />
       </div>
       <div className="search-bar">
         <div className="search">
@@ -46,7 +46,7 @@ export default function Navbar() {
               }
             }}
           >
-            <img src="/public/assets/icons8-search.svg" alt="" />
+            <img src="/assets/icons8-search.svg" alt="" />
           </button>
           <input
             type="text"

@@ -10,7 +10,7 @@ export default function TvShows() {
   const [index, setIndex] = useState(1);
   const { isLoading, data, isError } = useFetch(
     ["movies", "nowplaying"],
-    `https://api.themoviedb.org/3/tv/now_playing?api_key=${
+    `https://api.themoviedb.org/3/movie/now_playing?api_key=${
       import.meta.env.VITE_API_KEY
     }&language=en-US&page=1`
   );

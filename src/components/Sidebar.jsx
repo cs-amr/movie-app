@@ -10,7 +10,7 @@ import { AiTwotoneStar } from "react-icons/ai";
 import { FaCalendar } from "react-icons/fa";
 import "../styles/components/sidebar.scss";
 export default function Sidebar() {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
 
   return (
     <aside className={sidebarOpen ? "open" : "aside"}>
