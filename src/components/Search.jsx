@@ -44,11 +44,21 @@ export default function Search() {
   if (isLoading) <h1>....</h1>;
   if (isLoading2) <h1>....</h1>;
   if (isLoading3) <h1>....</h1>;
+  function handeKeyDown(e) {
+    if (e.key === "Enter") {
+      setKeyword(inputRef.current.value);
+    } else if (e.key === "Escape") {
+      setSearchIsOpen(false);
+    }
+  }
   return (
     <div
       className={searchIsOpen ? "search-overlay open" : "seach-overlay "}
       onClick={() => {
         setSearchIsOpen(false);
+      }}
+      onKeyDown={(e) => {
+        handeKeyDown(e);
       }}
     >
       <div
@@ -71,6 +81,9 @@ export default function Search() {
             placeholder="search for movies and tvshows"
             defaultValue={keyword}
             ref={inputRef}
+            onKeyDown={(e) => {
+              handeKeyDown(e);
+            }}
           />
         </div>
         <div className="search">

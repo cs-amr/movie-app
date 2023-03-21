@@ -6,6 +6,14 @@ export default function Navbar() {
   const { searchIsOpen, setSearchIsOpen, keyword, setKeyword } =
     useGlobalContext();
   const refInput = useRef(null);
+  function handeKeyDown(e) {
+    if (e.key === "Enter") {
+      if (refInput.current.value) {
+        setKeyword(refInput.current.value);
+        setSearchIsOpen(true);
+      }
+    }
+  }
   return (
     <header>
       <Link
@@ -52,6 +60,9 @@ export default function Navbar() {
             type="text"
             placeholder="search for movies and tvshows"
             ref={refInput}
+            onKeyDown={(e) => {
+              handeKeyDown(e);
+            }}
           />
         </div>
       </div>
