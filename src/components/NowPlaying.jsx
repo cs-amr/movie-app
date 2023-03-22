@@ -1,6 +1,7 @@
 import MovieCard from "./MovieCard";
 import "../styles/components/nowplaying.scss";
 import { useFetch } from "../hooks/useFetch";
+import LoadingCard from "./LoadingCard";
 export default function NowPlaying() {
   const { isLoading, data, isError } = useFetch(
     ["movies", "nowplaying"],
@@ -19,8 +20,8 @@ export default function NowPlaying() {
     }&language=en-US&page=2`
   );
 
-  if (isLoading) return <h1>...</h1>;
-  if (isLoading2) return <h1>...</h1>;
+  if (isLoading) return <LoadingCard />;
+  if (isLoading2) return <LoadingCard />;
 
   return (
     <section className="nowPlaying">

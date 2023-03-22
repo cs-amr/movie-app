@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useQuery } from "react-query";
 import { useFetch } from "../hooks/useFetch";
+import LoadingCard from "./LoadingCard";
 import MovieCard from "./MovieCard";
 
 export default function RatedMovies() {
@@ -25,8 +26,8 @@ export default function RatedMovies() {
     }&language=en-US&page=2`
   );
 
-  if (isLoading1) return <h1>...</h1>;
-  if (isLoading2) return <h1>...</h1>;
+  if (isLoading1) return <LoadingCard />;
+  if (isLoading2) return <LoadingCard />;
 
   return (
     <div className="topRatedMovies">

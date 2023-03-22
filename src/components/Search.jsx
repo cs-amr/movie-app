@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useGlobalContext } from "../context/SearchContext";
 import { useFetch } from "../hooks/useFetch";
 import "../styles/components/search.scss";
@@ -9,7 +9,15 @@ import ShowCard from "./ShowCard";
 export default function Search() {
   const { searchIsOpen, setSearchIsOpen, keyword, setKeyword } =
     useGlobalContext();
-  //
+  function handleKeyDown(e) {
+    if (e.key === "Escape") {
+      setSearchIsOpen(false);
+    }
+  }
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  });
   const {
     data: movies,
     isLoading,

@@ -1,6 +1,7 @@
 import "../styles/components/upcomingmovies.scss";
 import { useFetch } from "../hooks/useFetch";
 import ShowCard from "./ShowCard";
+import LoadingCard from "./LoadingCard";
 export default function AiringShows() {
   const {
     isLoading: isLoading1,
@@ -23,8 +24,8 @@ export default function AiringShows() {
     }&language=en-US&page=2`
   );
 
-  if (isLoading1) return <h1>...</h1>;
-  if (isLoading2) return <h1>...</h1>;
+  if (isLoading1) return <LoadingCard />;
+  if (isLoading2) return <LoadingCard />;
 
   return (
     <div className="upComingMovies">

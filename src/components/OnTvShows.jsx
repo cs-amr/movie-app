@@ -1,6 +1,7 @@
 import ShowCard from "./ShowCard";
 import "../styles/components/ontvshows.scss";
 import { useFetch } from "../hooks/useFetch";
+import LoadingCard from "./LoadingCard";
 export default function OnTvShows() {
   const { isLoading, data, isError } = useFetch(
     ["shows", "onAir"],
@@ -19,8 +20,8 @@ export default function OnTvShows() {
     }&language=en-US&page=2`
   );
 
-  if (isLoading) return <h1>...</h1>;
-  if (isLoading2) return <h1>...</h1>;
+  if (isLoading) return <LoadingCard />;
+  if (isLoading2) return <LoadingCard />;
 
   return (
     <section className="onTvShows">

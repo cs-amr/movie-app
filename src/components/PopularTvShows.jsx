@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useQuery } from "react-query";
 import { useFetch } from "../hooks/useFetch";
+import LoadingCard from "./LoadingCard";
 import ShowCard from "./ShowCard";
 export default function PopularTvShows() {
   const {
@@ -25,8 +26,8 @@ export default function PopularTvShows() {
     }&language=en-US&page=3`
   );
 
-  if (isLoading) return <h1>...</h1>;
-  if (isLoading2) return <h1>...</h1>;
+  if (isLoading) return <LoadingCard />;
+  if (isLoading2) return <LoadingCard />;
 
   return (
     <section className="popularTvShows">

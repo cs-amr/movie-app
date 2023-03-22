@@ -14,6 +14,7 @@ import Genres from "./pages/Genres";
 import Movie from "./pages/Movie";
 import Person from "./pages/Person";
 import Show from "./pages/Show";
+import NotFound from "./pages/NotFound";
 export const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
@@ -30,6 +31,7 @@ export const router = createBrowserRouter(
       <Route path="upcoming" element={<UpComing />} />
       <Route path="toprated" element={<TopRated />} />
       <Route path="genres" element={<Genres />} />
+      <Route path="*" element={<NotFound />} />
     </Route>
   )
 );

@@ -1,6 +1,6 @@
 @import "../utilities/variables";
 
-.personCard {
+.person-card {
   min-width: 134px;
   max-width: 134px;
   height: 176px;
@@ -13,6 +13,17 @@
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
+  position: relative;
+  .error-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url("/assets/user.png");
+    background-position: 50% 35%;
+    z-index: -1;
+    background-size: 30%;
+    background-repeat: no-repeat;
+  }
   p {
     width: 100%;
     padding: 8px 10px;
@@ -30,7 +41,7 @@
   }
 }
 @media screen and (max-width: 1020px) {
-  .moviePerson {
+  .person-card {
     height: 144px;
     p {
       margin-top: 9px;

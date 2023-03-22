@@ -2,6 +2,7 @@ import React from "react";
 import MovieCard from "./MovieCard";
 import "../styles/components/nowplaying.scss";
 import { useFetch } from "../hooks/useFetch";
+import LoadingCard from "./LoadingCard";
 export default function PopularMovies() {
   const { isLoading, data, isError } = useFetch(
     ["movie", "popular"],
@@ -19,8 +20,8 @@ export default function PopularMovies() {
       import.meta.env.VITE_API_KEY
     }&language=en-US&page=4`
   );
-  if (isLoading) return <h1>...</h1>;
-  if (isLoading2) return <h1>...</h1>;
+  if (isLoading) return <LoadingCard />;
+  if (isLoading2) return <LoadingCard />;
 
   return (
     <section className="popularmovies">

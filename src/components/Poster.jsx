@@ -11,6 +11,7 @@ export default function Poster({ poster, type }) {
         backgroundImage: `url("https://image.tmdb.org/t/p/w500${poster?.poster_path}")`,
       }}
     >
+      <div className="error-img"></div>
       <span>
         <AiFillStar color="#ffb43a" />
         {poster.vote_average}

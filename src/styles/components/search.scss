@@ -132,3 +132,13 @@ body {
     -o-transform: scale(1);
   }
 }
+.search-container::-webkit-scrollbar,
+.search-container *::-webkit-scrollbar {
+  display: none;
+}
+
+.search-container,
+.search-container * {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

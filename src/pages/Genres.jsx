@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useInfiniteQuery } from "react-query";
+import LoadingPosters from "../components/LoadingPosters";
 import MoreNav from "../components/MoreNav";
 import Poster from "../components/Poster";
 import { useFetch } from "../hooks/useFetch";
@@ -68,7 +69,7 @@ export default function Genres() {
   if (isLoading1) return <h1>...</h1>;
   if (isLoading2) return <h1>...</h1>;
   if (isLoading3) {
-    return <h1>loading</h1>;
+    return <LoadingPosters />;
   }
   return (
     <section>

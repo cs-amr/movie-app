@@ -3,6 +3,7 @@ import PersonCard from "../components/PersonCard";
 import { useQuery } from "react-query";
 import axios from "axios";
 import { useFetch } from "../hooks/useFetch";
+import LoadingPeople from "./LoadingPeople";
 export default function PopularPeople() {
   const { isLoading, data, isError } = useFetch(
     ["people"],
@@ -20,8 +21,8 @@ export default function PopularPeople() {
       import.meta.env.VITE_API_KEY
     }&language=en-US&page=3`
   );
-  if (isLoading) return <h1>...</h1>;
-  if (isLoading2) return <h1>...</h1>;
+  if (isLoading) return <LoadingPeople />;
+  if (isLoading2) return <LoadingPeople />;
 
   return (
     <section>

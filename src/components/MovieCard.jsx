@@ -6,11 +6,13 @@ export default function MovieCard({ movie }) {
   return (
     <Link
       to={`/movies/${movie?.id}`}
-      className="movieCard"
+      className="movie-card"
       style={{
         backgroundImage: `url("https://image.tmdb.org/t/p/w500${movie?.backdrop_path}")`,
+        backgroundPosition: "center",
       }}
     >
+      <div className="error-img"></div>
       <span>
         <AiFillStar color="#ffb43a" />
         {movie?.vote_average}
